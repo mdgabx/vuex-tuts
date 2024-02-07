@@ -11,12 +11,18 @@ export const store = createStore({
                 {id: 2, title: 'shampoo', price: 8},
                 {id: 3, title: 'soap', price: 25},
                 ],
-        count: 0
     }
   },
-  mutations: {
-    increment (state) {
-      state.count++
+  getters: {
+    saleProducts(state) {
+        let salesProduct = state.products.map((product) => {
+            return {
+                title: `**${product.title}**`,
+                price: product.price / 2
+            }
+        })
+
+        return salesProduct
     }
   }
 })

@@ -2,7 +2,7 @@
     <div>
         <h2>Product 1</h2>
         <ul>
-            <li v-for="product in products" :key="product.id">
+            <li v-for="product in salesProduct" :key="product.id">
                 <span>{{ product.title }}</span>
                 <p>{{ product.price }}</p>
             </li>
@@ -11,12 +11,22 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
     computed: {
-        products() {
-            return this.$store.state.products
+        
+        // products() {
+        //     return this.$store.state.products
+        // }
+
+        ...mapState(['products']),
+        salesProduct() {
+            return this.$store.getters.saleProducts;
         }
-    }
+    },
+    mounted() {
+        console.log(this.products)
+    },
 }
 </script>
 
