@@ -7,7 +7,7 @@
                 <p>{{ product.price }}</p>
             </li>
         </ul>
-        <button @click="reducePrice">Reduce Price</button>
+        <button @click="reducePrice(5)">Reduce Price</button>
     </div>
 </template>
 
@@ -29,8 +29,9 @@ export default {
         console.log(this.products)
     },
     methods: {
-        reducePrice() {
-            this.$store.commit('reducePrice')
+        reducePrice(amount) {
+            // this.$store.commit('reducePrice')
+            this.$store.dispatch('reducePrice', amount)
         }
     },  
 }

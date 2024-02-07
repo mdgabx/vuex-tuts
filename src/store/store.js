@@ -7,9 +7,9 @@ export const store = createStore({
   state () {
     return {
         products: [
-                {id: 1, title: 'toothbrush', price: 12},
-                {id: 2, title: 'shampoo', price: 8},
-                {id: 3, title: 'soap', price: 25},
+                {id: 1, title: 'toothbrush', price: 20},
+                {id: 2, title: 'shampoo', price: 30},
+                {id: 3, title: 'soap', price: 40},
                 ],
     }
   },
@@ -26,10 +26,17 @@ export const store = createStore({
     }
   },
   mutations: {
-    reducePrice(state) {
+    reducePrice(state, payload) {
         return state.products.forEach((product) => {
-            return product.price -= 1
+            return product.price -= payload
         })
+    }
+  },
+  actions: {
+    reducePrice(context, payload) {
+        setTimeout(() => {
+            context.commit('reducePrice', payload)
+        }, 2000)
     }
   }
 })
