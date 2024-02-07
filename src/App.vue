@@ -15,11 +15,6 @@ export default {
     'product-list-one' : ProductListOneVue,
     'product-list-two' : ProductListTwo
   },
-  data() {
-    return {
-      
-    }
-  }
 }
 </script>
 
