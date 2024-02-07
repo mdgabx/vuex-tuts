@@ -7,6 +7,7 @@
                 <p>{{ product.price }}</p>
             </li>
         </ul>
+        <button @click="reducePrice">Reduce Price</button>
     </div>
 </template>
 
@@ -27,6 +28,11 @@ export default {
     mounted() {
         console.log(this.products)
     },
+    methods: {
+        reducePrice() {
+            this.$store.commit('reducePrice')
+        }
+    },  
 }
 </script>
 
