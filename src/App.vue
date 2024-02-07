@@ -17,11 +17,7 @@ export default {
   },
   data() {
     return {
-      products: [
-        {id: 1, title: 'toothbrush', price: 12},
-        {id: 2, title: 'shampoo', price: 8},
-        {id: 1, title: 'soap', price: 25},
-      ]
+      
     }
   }
 }
@@ -32,7 +28,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: left;
   color: #2c3e50;
   margin-top: 60px;
 }
